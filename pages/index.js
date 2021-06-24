@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -10,7 +11,17 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          ようこそ <a href="https://nextjs.org">Next.js!</a>
+        {/* クライアントサイド ナビゲーション 
+        ・JSでページを切り替える 
+        ・URLを切り替えてもページの再読み込みが不要
+        ・クライアントの状態を保ってページ遷移
+        ・ページ遷移より高速
+        */}
+        Read <Link href="/posts/first-post">
+          <a>this page!</a>
+        </Link>
+        {/* 通常のaタグ */}
+        {/* Read <a href="/posts/first-post">this page!</a> */}
         </h1>
 
         <p className="description">
